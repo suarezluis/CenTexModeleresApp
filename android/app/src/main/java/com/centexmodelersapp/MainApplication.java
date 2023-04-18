@@ -1,4 +1,4 @@
-package com.app.centexmodelers;
+package com.centexmodelersapp;
 
 import android.app.Application;
 import com.facebook.react.PackageList;

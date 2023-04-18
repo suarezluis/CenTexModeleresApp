@@ -7,11 +7,11 @@
 #define TIMEOUT_SECONDS 600
 #define TEXT_TO_LOOK_FOR @"Welcome to React"
 
-@interface CenTexModelersTests : XCTestCase
+@interface CentexModelersAppTests : XCTestCase
 
 @end
 
-@implementation CenTexModelersTests
+@implementation CentexModelersAppTests
 
 - (BOOL)findSubviewInView:(UIView *)view matching:(BOOL (^)(UIView *view))test
 {
