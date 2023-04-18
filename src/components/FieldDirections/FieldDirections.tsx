@@ -55,18 +55,18 @@ const FieldDirections = () => {
           <ModalContent>
             <ModalHeader>
               <Pressable onPress={() => setModalVisible(!modalVisible)}>
-                <Text>✖</Text>
+                <StyledText>✖</StyledText>
               </Pressable>
             </ModalHeader>
             <ModalTitle>
-              <Text>This app has been brought to you by</Text>
-              <Text>Daniel Santos and Luis Suarez</Text>
+              <StyledText>This app has been brought to you by</StyledText>
+              <StyledText>Daniel Santos and Luis Suarez</StyledText>
             </ModalTitle>
             <ModalBody>
               <StyledImage
                 source={require('../../assets/images/daniel-luis.png')}
               />
-              <Text>We hope you find it as useful as we do.</Text>
+              <StyledText>We hope you find it as useful as we do.</StyledText>
             </ModalBody>
           </ModalContent>
         </StyledModal>
@@ -106,11 +106,11 @@ const StyledModal = styled.View`
   flex: 1;
   justify-content: center;
   align-items: center;
-  background-color: #00000090;
+  background-color: #000000c1;
 `;
 
 const ModalContent = styled.View`
-  background-color: white;
+  background-color: #48484a;
   padding: 20px;
   border-radius: 20px;
   width: 80%;
@@ -136,4 +136,10 @@ const StyledImage = styled.Image`
   height: 240px;
   margin: 10px 0;
   border-radius: 10px;
+`;
+
+const StyledText = styled.Text`
+  color: white;
+  text-align: center;
+  font-family: Roboto;
 `;
