@@ -1,9 +1,19 @@
-import React from 'react';
-import {Linking, View} from 'react-native';
+import React, {useState} from 'react';
+import {
+  Alert,
+  Image,
+  Linking,
+  Modal,
+  Pressable,
+  StyleSheet,
+  Text,
+  View,
+} from 'react-native';
 import styled from 'styled-components/native';
 import openMap from 'react-native-open-maps';
 
 const FieldDirections = () => {
+  const [modalVisible, setModalVisible] = useState(true);
   return (
     <FieldDirectionsContainer>
       <View>
@@ -27,15 +37,40 @@ const FieldDirections = () => {
           <EmojiIconDescription>Visit our Website</EmojiIconDescription>
         </Link>
         <Link
-          onPress={() =>
-            Linking.openURL(
-              'https://github.com/suarezluis/Cen-Tex-Modelers-App/blob/master/README.md',
-            )
-          }>
+          onPress={() => {
+            setModalVisible(true);
+          }}>
           <EmojiIcon>ℹ️</EmojiIcon>
           <EmojiIconDescription>About this App</EmojiIconDescription>
         </Link>
       </View>
+      <Modal
+        animationType="fade"
+        transparent={true}
+        visible={modalVisible}
+        onRequestClose={() => {
+          setModalVisible(!modalVisible);
+        }}>
+        <StyledModal>
+          <ModalContent>
+            <ModalHeader>
+              <Pressable onPress={() => setModalVisible(!modalVisible)}>
+                <Text>✖</Text>
+              </Pressable>
+            </ModalHeader>
+            <ModalTitle>
+              <Text>This app has been brought to you by</Text>
+              <Text>Daniel Santos and Luis Suarez</Text>
+            </ModalTitle>
+            <ModalBody>
+              <StyledImage
+                source={require('../../assets/images/daniel-luis.png')}
+              />
+              <Text>We hope you find it as useful as we do.</Text>
+            </ModalBody>
+          </ModalContent>
+        </StyledModal>
+      </Modal>
     </FieldDirectionsContainer>
   );
 };
@@ -65,4 +100,40 @@ const EmojiIconDescription = styled.Text`
   color: white;
   text-align: center;
   font-family: Roboto;
+`;
+
+const StyledModal = styled.View`
+  flex: 1;
+  justify-content: center;
+  align-items: center;
+  background-color: #00000090;
+`;
+
+const ModalContent = styled.View`
+  background-color: white;
+  padding: 20px;
+  border-radius: 20px;
+  width: 80%;
+`;
+
+const ModalHeader = styled.View`
+  flex-direction: row;
+  justify-content: flex-end;
+`;
+
+const ModalTitle = styled.View`
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+`;
+const ModalBody = styled.View`
+  justify-content: center;
+  align-items: center;
+`;
+
+const StyledImage = styled.Image`
+  width: 300px;
+  height: 240px;
+  margin: 10px 0;
+  border-radius: 10px;
 `;
