@@ -1,19 +1,10 @@
 import React, {useState} from 'react';
-import {
-  Alert,
-  Image,
-  Linking,
-  Modal,
-  Pressable,
-  StyleSheet,
-  Text,
-  View,
-} from 'react-native';
+import {Linking, Modal, Pressable, View} from 'react-native';
 import styled from 'styled-components/native';
 import openMap from 'react-native-open-maps';
 
 const FieldDirections = () => {
-  const [modalVisible, setModalVisible] = useState(true);
+  const [modalVisible, setModalVisible] = useState(false);
   return (
     <FieldDirectionsContainer>
       <View>
@@ -64,7 +55,7 @@ const FieldDirections = () => {
             </ModalTitle>
             <ModalBody>
               <StyledImage
-                source={require('../../assets/images/daniel-luis.png')}
+                source={require('../../assets/images/daniel-luis.webp')}
               />
               <StyledText>We hope you find it as useful as we do.</StyledText>
             </ModalBody>

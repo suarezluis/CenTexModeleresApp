@@ -1,4 +1,4 @@
-package com.centexmodelersapp;
+package com.centexmodelers;
 
 import com.facebook.react.ReactActivity;
 import com.facebook.react.ReactActivityDelegate;

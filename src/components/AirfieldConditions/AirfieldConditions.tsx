@@ -1,7 +1,7 @@
 import React, {useEffect} from 'react';
-import {SubTitle} from '../Root/Root';
+
 import axios from 'axios';
-import {Image, Text, View} from 'react-native';
+
 import styled from 'styled-components/native';
 import {format} from 'date-fns';
 import WeatherTable from './WeatherTable';
@@ -165,7 +165,7 @@ const SubTitle2 = styled.Text`
 `;
 
 const Divider = styled.View`
-  margin: 10px;
+  margin: 5px;
   height: 1px;
   background-color: #838383;
 `;

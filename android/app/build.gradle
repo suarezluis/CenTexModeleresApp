@@ -93,13 +93,13 @@ android {
 
     compileSdkVersion rootProject.ext.compileSdkVersion
 
-    namespace "com.centexmodelersapp"
+    namespace "com.centexmodelers"
     defaultConfig {
-        applicationId "com.app.centexmodelers"
+        applicationId "com.centexmodelers"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
-        versionCode 3
-        versionName "1.1"
+        versionCode 5
+        versionName "2.1"
     }
 
     splits {
